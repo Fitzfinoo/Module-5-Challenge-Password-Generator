@@ -15,12 +15,11 @@ First, i read the instruction, create the file system and start to build the jav
 
 ![alt text](assets/05-javascript-challenge-demo.png)
 
-<a href="https://github.com/Fitzfinoo/Bootstrap-Portfolio/"> Respo Link </a>
 <a href="https://fitzfinoo.github.io/Password-Generator/"> Live Link </a>
 
+<a href="https://github.com/Fitzfinoo/Bootstrap-Portfolio/"> Respo Link </a>
 
 ## Credits
-git 
 Thanks to edx bootcamp team for providing starter code and mockup.
 
 ## License
