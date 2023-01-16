@@ -1,4 +1,4 @@
-git // Array of special characters to be included in password
+ // Array of special characters to be included in password
 var specialCharacters = [
   '@',
   '%',
@@ -89,21 +89,23 @@ var upperCasedCharacters = [
 ];
 
 
+
 //first message
 alert("Hello! Let's get started to generate the password!");
+
+
 
 
 function getPasswordOptions()  {
 
   ///set all the variables
-  let upCase =upperCasedCharacters.split();  
-  let lowCase = lowerCasedCharacters.split();
-  let numbs = numericCharacters.split();
-  let spChar = specialCharacters.split();
+  let upCase;  
+  let lowCase; 
+  let numbs;
+  let spChar; 
   let preference = [];
 
-passwordLength = prompt("Please select your password length in between 10 to 64 characters.");
-
+  let passwordLength = prompt("Please select your password length in between 10 to 64 characters.");
   if (passwordLength < 9 || passwordLength > 65 || isNAN(passwordLength) ) {
     alert("Try again!");
   }
@@ -181,5 +183,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);  
-
- 
