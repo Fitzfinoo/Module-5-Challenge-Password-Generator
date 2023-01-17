@@ -90,83 +90,99 @@ var upperCasedCharacters = [
 
 
 
-//first message
-alert("Hello! Let's get started to generate the password!");
+
+ ///set all the variables
+ let upCase;  
+ let lowCase; 
+ let numbs;
+ let spChar; 
+ let preference = [];
+ let passwordLength;
+ let selectedLength
+ let result;
 
 
+function getPasswordOptions() {
 
-
-function getPasswordOptions()  {
-
-  ///set all the variables
-  let upCase;  
-  let lowCase; 
-  let numbs;
-  let spChar; 
-  let preference = [];
-
-  let passwordLength = prompt("Please select your password length in between 10 to 64 characters.");
-  if (passwordLength < 9 || passwordLength > 65 || isNAN(passwordLength) ) {
+  passwordLength = prompt(
+    "Please select your password length in between 10 to 64 characters."
+  );
+  if (passwordLength < 9 || passwordLength > 65 || isNaN(passwordLength)) {
+    console.log("This is the password leght :", preference);
+    preference.push(selectedLength);
     alert("Try again!");
   }
-
-
   else {
-    if (confirm("Would you like special characters in your password?")){
-      preference.push(spChar);
-    }
-
-    if (confirm("Would you like number in your password?")){
-      preference.push(numbs);
-    }
-
-    if (confirm("Would you like lowercase characters in your password?")){
-      preference.push(lowCase);
-    }
-
-    if (confirm("Would you like uppercase characters in your password?")){
-      preference.push(upCase);
-    }
+    spChar = confirm("Would you like special characters in your password?");
+        if (spChar){
+            console.log("This is spChar :",spChar);
+            preference.push(spChar);
+        }
+    numbs = confirm("Would you like number in your password?");
+        if (numbs){
+           console.log("This is numbs :",numbs);
+           preference.push(numbs);
+         }
+    lowCase = confirm("Would you like lowercase characters in your password?");
+        if (lowCase){
+            console.log("This is lowCase:" ,lowCase);
+            preference.push(lowCase);
+         }  
+    upCase = confirm("Would you like uppercase characters in your password?");
+        if (upCase){
+             console.log("This is upCase:" ,upCase);
+             preference.push(upCase);
+         }   
+         
   }
-/////Using if statement for the users not selected any characters 
   if (preference.length===0){
     alert("Please select at least 1 type of characters! Try Again.")
-  };
-};
-  
+    }
+
+} 
+
 
 //// Use for loop and math floor math random to get the result
 function getRandom(arr) {
-  for (let i=0; i<passwordLength; i++) {
-    let random = Math.floor(Math.random()*passwordLength);
-    result += preference[ramdom];
+
+  for (let i=0; i>selectedLength; i++) {
+    let random = Math.floor(Math.random()*selectedLength);
+    result += preference[random];
   }
+  con
 
 }
 
 // Function to generate password with user input
 ////bring all arr to generate PW 
-///string , loop  
+//The array that holds all the possible choice that the users said true to. 
+
 function generatePassword() {
   let PW = [];
+  let possibleChoices =[];
+  getPasswordOptions();
+  getRandom();
 
   if (spChar){
-    PW.push(getRandom(spChar));
-  }
-  if (numbs){
-    PW.push(getRandom(numbs));
-  }
-  if (lowCase){
-    PW.push(getRandom(lowCase));
-  }
-  if (upCase){
-    PW.push(getRandom(upCase));
-  }
-  for (let i=PW.length; i < passwordLength; i++) {
-    PW.push(getRandom);
+    possibleChoices = possibleChoices.concat(specialCharacters);
   }
 
-  return"PW"; ///test
+  if (numbs){
+    possibleChoices = possibleChoices.concat(numericCharacters);
+  }
+
+  if (lowCase){
+    possibleChoices = possibleChoices.concat(lowerCasedCharacters);
+  }
+
+  if (upCase){
+    possibleChoices = possibleChoices.concat(upperCasedCharacters);
+  }
+
+  for (let 
+  }
+
+  return PW"join"; 
 
 }
 
