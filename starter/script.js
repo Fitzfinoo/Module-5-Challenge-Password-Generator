@@ -146,11 +146,9 @@ function getPasswordOptions() {
 function getRandom(arr) {
 
   for (let i=0; i>selectedLength; i++) {
-    let random = Math.floor(Math.random()*selectedLength);
+    let getRandom = Math.floor(Math.random()*selectedLength);
     result += preference[random];
   }
-  con
-
 }
 
 // Function to generate password with user input
@@ -179,10 +177,11 @@ function generatePassword() {
     possibleChoices = possibleChoices.concat(upperCasedCharacters);
   }
 
-  for (let 
-  }
+  for (let i=PW.length; i < selectedLength; i++) {
+    PW.push(getRandom);
+  };
 
-  return PW"join"; 
+  return ; 
 
 }
 
