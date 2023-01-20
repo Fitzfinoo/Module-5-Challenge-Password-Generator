@@ -156,7 +156,7 @@ function getRandom(arr) {
 //The array that holds all the possible choice that the users said true to. 
 
 function generatePassword() {
-  let PW = [];
+  let PW = "";
   let possibleChoices =[];
   getPasswordOptions();
   getRandom();
@@ -177,13 +177,14 @@ function generatePassword() {
     possibleChoices = possibleChoices.concat(upperCasedCharacters);
   }
 
-  for (let i=PW.length; i < selectedLength; i++) {
-    PW.push(getRandom);
-  };
+  for (let i = 0; i < passwordLength; i++) {
+    let getRandom = Math.floor(Math.random() * possibleChoices.length);
+    let element = possibleChoices[getRandom];
+    PW += element;
+  } return PW; 
+  } ;
 
-  return ; 
 
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
